@@ -6,22 +6,25 @@
   "env": {
       "CATALINA_OPTS": "{{jenkins.catalina_opts}}",
       "JENKINS_FRAMEWORK_NAME": "{{jenkins.framework-name}}",
-      "JENKINS_CONTEXT": "/service/{{jenkins.framework-name}}"
+      "JENKINS_CONTEXT": "/service/{{jenkins.framework-name}}",
+      "LD_LIBRARY_PATH": "/opt/mesosphere/lib"
   },
    "container": {
        "type": "DOCKER",
        "docker": {
            "image": "rogerignazio/jenkins-tomcat",
-           "network": "BRIDGE",
-           "portMappings": [
-               { "containerPort": 8080, "hostPort": 0 }
-           ]
+           "network": "HOST"
        },
        "volumes": [
            {
                "containerPath": "/var/jenkins_home",
                "hostPath": "{{jenkins.host_volume}}/{{jenkins.framework-name}}",
                "mode": "RW"
+           },
+           {
+               "containerPath": "/opt/mesosphere",
+               "hostPath": "/opt/mesosphere",
+               "mode": "RO"
            }
        ]
    },
