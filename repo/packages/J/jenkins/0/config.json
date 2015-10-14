@@ -35,7 +35,7 @@
         "catalina_opts": {
             "description": "Optional arguments to pass to the Tomcat application server.",
             "type": "string",
-            "default": "-Xms512m -Xmx512m"
+            "default": "-Xms512m -Xmx512m -Dport.http=$PORT0 -Dcontext.path=$JENKINS_CONTEXT"
         }
       },
       "required": [
