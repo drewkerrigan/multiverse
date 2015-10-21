@@ -13,7 +13,8 @@
        "type": "DOCKER",
        "docker": {
            "image": "rogerignazio/jenkins-mesos",
-           "network": "HOST"
+           "network": "HOST",
+           "forcePullImage": true
        },
        "volumes": [
            {
