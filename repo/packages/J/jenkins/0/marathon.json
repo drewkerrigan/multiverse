@@ -4,7 +4,7 @@
   "mem": {{jenkins.mem}},
   "instances": 1,
   "env": {
-      "CATALINA_OPTS": "{{jenkins.catalina_opts}}",
+      "JAVA_OPTS": "{{jenkins.java_opts}}",
       "JENKINS_FRAMEWORK_NAME": "{{jenkins.framework-name}}",
       "JENKINS_CONTEXT": "/service/{{jenkins.framework-name}}",
       "LD_LIBRARY_PATH": "/opt/mesosphere/lib"
@@ -12,7 +12,7 @@
    "container": {
        "type": "DOCKER",
        "docker": {
-           "image": "rogerignazio/jenkins-tomcat",
+           "image": "rogerignazio/jenkins-mesos",
            "network": "HOST"
        },
        "volumes": [

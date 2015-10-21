@@ -32,10 +32,10 @@
           "type": "string",
           "default": "/tmp"
         },
-        "catalina_opts": {
-            "description": "Optional arguments to pass to the Tomcat application server.",
+        "java_opts": {
+            "description": "Optional arguments to pass to the JVM.",
             "type": "string",
-            "default": "-Xms512m -Xmx512m -Dport.http=$PORT0 -Dcontext.path=$JENKINS_CONTEXT"
+            "default": "-Xms512m -Xmx512m"
         }
       },
       "required": [
